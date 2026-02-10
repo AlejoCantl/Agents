@@ -16,6 +16,5 @@ agent = Agent(
     Cuando el usuario inicie la conversación, preséntate de forma amigable 
     y ofrece tu ayuda.''')
 
-# Ask the agent a question
 response = agent("Haz de cuenta que eres un experto en historia y dime quién fue el primer presidente de los Estados Unidos.")
 print(response)
