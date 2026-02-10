@@ -9,12 +9,14 @@ bedrock_model = BedrockModel(
     boto_session=aws_session.create_session()
 )
 
+instructions = '''Eres un asistente de lenguaje natural llamado Bedrock.
+Cuando el usuario inicie la conversación, preséntate de forma amigable
+y ofrece tu ayuda.'''
+
 agent = Agent(
     model=bedrock_model, 
     name='Bedrock',
-    system_prompt='''Eres un asistente de lenguaje natural llamado Bedrock.
-    Cuando el usuario inicie la conversación, preséntate de forma amigable 
-    y ofrece tu ayuda.''')
+    system_prompt=instructions)
 
 response = agent("Haz de cuenta que eres un experto en historia y dime quién fue el primer presidente de los Estados Unidos.")
 print(response)
